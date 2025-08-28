@@ -18,9 +18,6 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -29,8 +26,7 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))',
-					hover: 'hsl(var(--primary-hover))'
+					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -56,23 +52,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				'section-bg': 'hsl(var(--section-background))',
-				'skill-badge': 'hsl(var(--skill-badge))',
-				'skill-badge-text': 'hsl(var(--skill-badge-text))',
-				'timeline-line': 'hsl(var(--timeline-line))'
-			},
-			backgroundImage: {
-				'hero-gradient': 'var(--hero-gradient)'
-			},
-			boxShadow: {
-				'card': 'var(--shadow-card)',
-				'card-hover': 'var(--shadow-card-hover)',
-				'hero': 'var(--shadow-hero)'
-			},
-			fontSize: {
-				'hero': 'var(--font-hero)',
-				'section': 'var(--font-section)',
-				'subsection': 'var(--font-subsection)'
+				sidebar: {
+					DEFAULT: 'hsl(var(--sidebar-background))',
+					foreground: 'hsl(var(--sidebar-foreground))',
+					primary: 'hsl(var(--sidebar-primary))',
+					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+					accent: 'hsl(var(--sidebar-accent))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+					border: 'hsl(var(--sidebar-border))',
+					ring: 'hsl(var(--sidebar-ring))'
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

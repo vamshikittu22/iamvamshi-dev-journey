@@ -1,67 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Swiss-inspired Portfolio Design System */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
 @layer base {
   :root {
-    /* Core Swiss Design Colors - Professional & Clean */
-    --background: 0 0% 99%;
-    --foreground: 220 15% 15%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Professional Blue Accent */
-    --primary: 217 91% 59%;
-    --primary-foreground: 0 0% 98%;
-    --primary-hover: 217 91% 54%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Neutral Grays for Swiss Minimalism */
-    --secondary: 220 13% 96%;
-    --secondary-foreground: 220 15% 25%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 220 13% 95%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 217 91% 96%;
-    --accent-foreground: 217 91% 24%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 59%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Portfolio-specific tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(217 91% 59%), hsl(217 91% 69%));
-    --section-background: 0 0% 98.5%;
-    --skill-badge: 217 91% 94%;
-    --skill-badge-text: 217 91% 30%;
-    --timeline-line: 220 13% 85%;
-    
-    /* Animations & Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    
-    /* Shadows for Depth */
-    --shadow-card: 0 1px 3px 0 hsl(220 15% 15% / 0.1), 0 1px 2px -1px hsl(220 15% 15% / 0.1);
-    --shadow-card-hover: 0 10px 15px -3px hsl(220 15% 15% / 0.1), 0 4px 6px -4px hsl(220 15% 15% / 0.1);
-    --shadow-hero: 0 25px 50px -12px hsl(217 91% 59% / 0.25);
+    --sidebar-background: 0 0% 98%;
 
-    /* Typography Scale */
-    --font-hero: 4.5rem;
-    --font-section: 2.5rem;
-    --font-subsection: 1.75rem;
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -109,93 +100,6 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    scroll-behavior: smooth;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
-  }
-}
-
-@layer components {
-  /* Hero Components */
-  .hero-title {
-    @apply text-6xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
-  }
-  
-  .hero-subtitle {
-    @apply text-xl md:text-2xl text-muted-foreground font-light leading-relaxed;
-  }
-  
-  /* Section Headers */
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold text-foreground mb-4;
-  }
-  
-  .section-subtitle {
-    @apply text-lg text-muted-foreground leading-relaxed;
-  }
-  
-  /* Card Components */
-  .portfolio-card {
-    @apply bg-card rounded-2xl p-6 shadow-sm border border-border/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
-  }
-  
-  .skill-badge {
-    @apply inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-accent text-accent-foreground transition-all duration-200 hover:scale-105;
-  }
-  
-  .timeline-item {
-    @apply relative pl-8 pb-12 last:pb-0;
-  }
-  
-  .timeline-item::before {
-    @apply absolute left-0 top-2 w-4 h-4 bg-primary rounded-full border-4 border-background;
-    content: '';
-  }
-  
-  .timeline-item::after {
-    @apply absolute left-2 top-6 w-0.5 h-full bg-border;
-    content: '';
-  }
-  
-  .timeline-item:last-child::after {
-    @apply hidden;
-  }
-  
-  /* Animation Classes */
-  .fade-in {
-    @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
-  }
-  
-  .fade-in.animate {
-    @apply opacity-100 translate-y-0;
-  }
-  
-  .slide-in-left {
-    @apply opacity-0 -translate-x-8 transition-all duration-500 ease-out;
-  }
-  
-  .slide-in-left.animate {
-    @apply opacity-100 translate-x-0;
-  }
-  
-  .slide-in-right {
-    @apply opacity-0 translate-x-8 transition-all duration-500 ease-out;
-  }
-  
-  .slide-in-right.animate {
-    @apply opacity-100 translate-x-0;
-  }
-  
-  /* Hover Effects */
-  .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-2;
-  }
-  
-  .hover-glow {
-    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20;
+    @apply bg-background text-foreground;
   }
 }
